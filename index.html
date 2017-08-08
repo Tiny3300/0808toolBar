@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工具栏</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #cccccc;
+        }
+        .toolbar{
+            max-width: 670px;
+            min-width: 550px;
+            width: 100%;
+            /*border: 1px red solid;*/
+            margin: 150px auto;
+        }
+        .btn{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #3AB09E;
+            color: #ffffff;
+            font-size: 3.5em;
+            text-align: center;
+            line-height: 60px;
+            position: relative;
+            left: 50%;
+            margin-left: -35px;
+
+        }
+        .btn:after{
+            content: "+";
+        }
+        .icons{
+            background-color: #ffffff;
+            color: #3AB09E;
+            height: 36px;
+            padding: 17px 10px 17px 50px ;
+            margin: -70px 0 0 45%;
+            border-radius: 2em;
+            width: 0%;
+            overflow: hidden;
+        }
+        .icons li{
+            width: 16%;
+        }
+        .active{
+            transform: rotate(45deg);
+            left: 61px;
+        }
+        .open{
+            width: 80%;
+            padding: 17px 10px 17px 90px ;
+            margin: -70px 0 0 5%;
+        }
+        .btn,.icons{
+            transition: all 1s cubic-bezier(.9,-.4,.2,3);
+        }
+    </style>
+</head>
+<body>
+<div class="toolbar">
+    <div class="btn"></div>
+    <ul class="icons ">
+        <li class="fa fa-home fa-2x"></li>
+        <li class="fa fa-user fa-2x "></li>
+        <li class="fa fa-star fa-2x "></li>
+        <li class="fa fa-file-text fa-2x "></li>
+        <li class="fa fa-paper-plane fa-2x "></li>
+    </ul>
+</div>
+<script src="./js/jquery-1.11.0.min.js"></script>
+<script>
+    $(".btn").click(function (e) {
+        $(".btn").toggleClass("active");
+        $(".icons").toggleClass("open");
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变换的工具栏</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #cccccc;
+        }
+        .toolbar{
+            max-width: 670px;
+            min-width: 550px;
+            width: 100%;
+            margin: 150px auto;
+            /*border: 1px solid red;*/
+        }
+        .button{
+            width: 70px;
+            height: 70px;
+            background-color: #3AB09E;
+            border-radius: 50%;
+            font-size: 3.5em;
+            text-align: center;
+            line-height: 60px;
+            color: #ffffff;
+            position: relative;
+            left: 50%;
+            /*transform: rotate(45deg);*/
+        }
+        .button:after{
+            content: '+';
+        }
+        .active{
+            left: 26px;
+            transform: rotate(45deg);
+        }
+        .icons{
+            background-color: #ffffff;
+            width: 0%;
+            margin: -70px 0 0 50%;
+            height: 36px;
+            padding: 17px 10px 17px 60px;
+            border-radius: 2em;
+            color: #3AB09E;
+            overflow: hidden;
+        }
+        .open{
+            width: 80%;
+            margin: -70px 0 0 5%;
+            padding: 17px 10px 17px 90px;
+        }
+        .icons li{
+            width: 16%;
+        }
+        .button,.icons{
+            transition:   all 1s cubic-bezier(.9,-.4,.21,3);;
+        }
+    </style>
+</head>
+<body>
+<div class="toolbar">
+    <div class="button"></div>
+    <ul class="icons">
+        <li class="fa fa-home fa-2x"></li>
+        <li class="fa fa-user fa-2x"></li>
+        <li class="fa fa-star fa-2x"></li>
+        <li class="fa fa-file-text fa-2x"></li>
+        <li class="fa fa-paper-plane fa-2x"></li>
+    </ul>
+</div>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+    $(".button").click(function (e) {
+        $(".button").toggleClass("active");
+        $(".icons").toggleClass("open");
+    })
+</script>
+</body>
+</html>
